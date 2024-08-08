@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Darkbrown: hsl(25, 47%, 15%);
+  --Mediumbrown: hsl(28, 10%, 53%);
+  --Cream: hsl(27, 66%, 92%);
+  --Verypaleorange: hsl(33, 100%, 98%);
+
+  --Softred: hsl(10, 79%, 65%);
+  --Cyan: hsl(186, 34%, 60%);
+}
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--Cream);
+}
+
+section {
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-wrap {
+  background-color: var(--Softred);
+  width: 550px;
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  border-radius: 15px;
+  padding: 1rem 2rem;
+}
+
+.balance {
+  color: var(--Verypaleorange);
+}
+
+.balance > p {
+  font-size: 0.85em;
+  font-weight: 400;
+  margin-bottom: 3px;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 2em;
+}
+
+.container {
+  margin-top: 20px;
+  background-color: var(--Verypaleorange);
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+.container > h2 {
+  color: var(--Darkbrown);
+}
+
+.footer-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.total-amount > p {
+  color: var(--Mediumbrown);
+  font-weight: 500;
+}
+
+.total-amount > h2 {
+  color: var(--Darkbrown);
+  font-size: 2.3em;
+}
+
+.percentage-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.percent {
+  align-self: flex-end;
+  color: var(--Darkbrown);
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.percentage-wrap > p:nth-child(2) {
+  color: var(--Mediumbrown);
+  font-weight: 500;
+}
+
+.expense_chart {
+  margin: 2.8rem 0.8rem 1.5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.chart-wrap {
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+}
+
+.bar {
+  width: 50px;
+  background-color: var(--Softred);
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.bar:hover {
+  filter: brightness(1.1);
+}
+
+.days {
+  color: var(--Mediumbrown);
+}
+
+hr {
+  margin-block: 20px;
+  border-top: 1px solid var(--Cream);
+}
+
+.tooltip {
+  background-color: var(--Darkbrown);
+  display: block;
+  width: 60px;
+  height: 30px;
+  padding: 6px;
+  border-radius: 5px;
+  color: var(--Verypaleorange);
+  text-align: center;
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  right: 50%;
+  transform: translateX(-50%);
+  left: 50%;
+  top: -35px;
+  transition: all 0.05s ease;
+  font-size: 0.9em;
+}
+
+.bar:hover .tooltip {
+  visibility: visible;
+}
+
+.current-day {
+  background-color: var(--Cyan);
+}
+
+@media screen and (max-width: 560px) {
+  .logo {
+    width: 15%;
+  }
+  .header-wrap {
+    width: 100%;
+  }
+  .container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .bar {
+    width: 40px;
+  }
+  .container {
+    padding: 2rem 1.2rem;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  .container > h2 {
+    font-size: 1.3em;
+  }
+  .total-amount > h2 {
+    color: var(--Darkbrown);
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  section {
+    display: grid;
+    place-self: center;
+  }
+  .bar {
+    width: 35px;
+  }
+  .container {
+    padding: 2rem 1rem;
+  }
+  .expense_chart {
+    gap: 12px;
+  }
+}
